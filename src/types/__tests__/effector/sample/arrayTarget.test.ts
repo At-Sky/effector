@@ -110,7 +110,7 @@ describe('basic cases', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number; targetType: string; }[]; }'.
+      Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
       "
     `)
   })
@@ -210,7 +210,8 @@ describe('basic cases', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number; targetType: string | void; }[]; }'.
+      Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+      Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
       "
     `)
   })
@@ -225,7 +226,8 @@ describe('basic cases', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number; targetType: string | void; }[]; }'.
+      Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+      Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
       "
     `)
   })
@@ -354,7 +356,9 @@ describe('combinable source object (should fail)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }[]; }'.
+      Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+        The types of '__.a' are incompatible between these types.
+          Type 'string' is not assignable to type 'number'.
       "
     `)
   })
@@ -383,7 +387,7 @@ describe('combinable source object (should fail)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: number; b: string; }; }[]; }'.
+      Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
       "
     `)
   })
@@ -454,7 +458,7 @@ describe('combinable source list (should pass)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }[]; }'.
+      Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>[]; error: \\"source should extend target type\\"; }'.
       "
     `)
   })
@@ -472,7 +476,7 @@ describe('combinable source list (should pass)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }[]; }'.
+      Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>[]; error: \\"source should extend target type\\"; }'.
       "
     `)
   })
@@ -488,7 +492,7 @@ describe('combinable source list (should fail)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [string]; }[]; }'.
+      Type 'EventCallable<[string]>' is not assignable to type 'Unit<number[]>'.
       "
     `)
   })
@@ -503,7 +507,7 @@ describe('combinable source list (should fail)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [string] | [number]; }[]; }'.
+      Type 'EventCallable<[string]>' is not assignable to type 'Unit<number[]>'.
       "
     `)
   })

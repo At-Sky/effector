@@ -104,7 +104,9 @@ describe('sample(config)', () => {
         })
         expect(typecheck).toMatchInlineSnapshot(`
           "
-          Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number; targetType: string; }; }'.
+          Type 'StoreWritable<string>' is not assignable to type 'Unit<number>'.
+            Types of property '__' are incompatible.
+              Type 'string' is not assignable to type 'number'.
           "
         `)
       })
@@ -167,7 +169,7 @@ describe('sample(config)', () => {
         })
         expect(typecheck).toMatchInlineSnapshot(`
           "
-          Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number; targetType: string; }; }'.
+          Type 'StoreWritable<string>' is not assignable to type 'Unit<number>'.
           "
         `)
       })
@@ -308,7 +310,7 @@ describe('sample(config)', () => {
         })
         expect(typecheck).toMatchInlineSnapshot(`
           "
-          Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number; targetType: string; }; }'.
+          Type 'StoreWritable<string>' is not assignable to type 'Unit<number>'.
           "
         `)
       })
@@ -432,7 +434,9 @@ describe('sample(config)', () => {
         })
         expect(typecheck).toMatchInlineSnapshot(`
           "
-          Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: User; targetType: string; }; }'.
+          Type 'StoreWritable<string>' is not assignable to type 'Unit<User>'.
+            Types of property '__' are incompatible.
+              Type 'string' is not assignable to type 'User'.
           "
         `)
       })

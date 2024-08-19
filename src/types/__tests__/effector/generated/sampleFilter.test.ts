@@ -64,11 +64,13 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -102,10 +104,12 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type 'AB'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -152,11 +156,11 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -191,10 +195,10 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -241,11 +245,11 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -280,10 +284,10 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -365,16 +369,23 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type 'AB'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -444,10 +455,14 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -537,16 +552,21 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -620,10 +640,14 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -713,16 +737,21 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -796,10 +825,14 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -847,10 +880,24 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | ABN; }[]; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         "
       `)
     })
@@ -896,8 +943,18 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | { a: string; }; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | { a: string; }; }[]; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         "
       `)
     })
@@ -947,10 +1004,24 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | ABN; }[]; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         "
       `)
     })
@@ -1000,8 +1071,18 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | { a: string; }; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | { a: string; }; }[]; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         "
       `)
     })
@@ -1051,10 +1132,24 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | ABN; }[]; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         "
       `)
     })
@@ -1104,8 +1199,18 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | { a: string; }; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | { a: string; }; }[]; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         "
       `)
     })
@@ -1147,12 +1252,20 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+          The types of '__.a' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
+        Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+          The types of '__.a' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
         "
       `)
     })
@@ -1185,10 +1298,18 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
         "
       `)
     })
@@ -1234,12 +1355,20 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+          The types of '__.a' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
+        Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+          The types of '__.a' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
         "
       `)
     })
@@ -1276,11 +1405,21 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
         "
       `)
     })
@@ -1326,12 +1465,20 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+          The types of '__.a' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
+        Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+          The types of '__.a' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
         "
       `)
     })
@@ -1368,11 +1515,21 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: { a: string; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
         "
       `)
     })
@@ -1709,14 +1866,16 @@ describe('tuple source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '(string | number)[]'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         "
       `)
     })
@@ -1742,14 +1901,14 @@ describe('tuple source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, number]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, number]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         "
       `)
     })
@@ -1773,20 +1932,20 @@ describe('tuple source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         "
       `)
     })
@@ -1812,14 +1971,14 @@ describe('tuple source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, number]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, number]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         "
       `)
     })
@@ -1843,20 +2002,20 @@ describe('tuple source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         "
       `)
     })
@@ -1882,14 +2041,14 @@ describe('tuple source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, number]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }[]; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, number]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         "
       `)
     })
@@ -1917,13 +2076,13 @@ describe('tuple source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         "
       `)
     })
@@ -1949,15 +2108,15 @@ describe('tuple source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number, string]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number, string]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number]; targetType: [number, number]; }; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
         "
       `)
     })
@@ -1993,18 +2152,18 @@ describe('tuple source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         "
       `)
     })
@@ -2030,15 +2189,15 @@ describe('tuple source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number, string]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number, string]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number]; targetType: [number, number]; }; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
         "
       `)
     })
@@ -2074,18 +2233,18 @@ describe('tuple source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         "
       `)
     })
@@ -2111,15 +2270,15 @@ describe('tuple source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number, string]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number, string]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number]; targetType: [number, number]; }; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
         "
       `)
     })
