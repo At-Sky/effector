@@ -123,7 +123,7 @@ describe('basic cases', () => {
     sample({source: num, clock: anyt, target: [num, str]})
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      no errors
+      Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
       "
     `)
   })
@@ -137,7 +137,7 @@ describe('basic cases', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      no errors
+      Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
       "
     `)
   })
@@ -152,7 +152,8 @@ describe('basic cases', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      no errors
+      Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+      Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
       "
     `)
   })
@@ -167,7 +168,8 @@ describe('basic cases', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      no errors
+      Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+      Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
       "
     `)
   })
@@ -181,7 +183,7 @@ describe('basic cases', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      no errors
+      Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
       "
     `)
   })
@@ -195,7 +197,7 @@ describe('basic cases', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      no errors
+      Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
       "
     `)
   })
@@ -241,7 +243,7 @@ describe('basic cases', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      no errors
+      Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
       "
     `)
   })
@@ -255,7 +257,7 @@ describe('basic cases', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      no errors
+      Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
       "
     `)
   })
@@ -356,7 +358,7 @@ describe('combinable source object (should fail)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+      Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ readonly a: number; }>'.
         The types of '__.a' are incompatible between these types.
           Type 'string' is not assignable to type 'number'.
       "
@@ -373,7 +375,9 @@ describe('combinable source object (should fail)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      no errors
+      Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ readonly a: number; }>'.
+        The types of '__.a' are incompatible between these types.
+          Type 'string' is not assignable to type 'number'.
       "
     `)
   })
@@ -403,7 +407,7 @@ describe('combinable source object (should fail)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      no errors
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ source: { a: Store<number>; b: Store<number>; } | { a: Store<number>; }; error: \\"source should extend target type\\"; }'.
       "
     `)
   })
@@ -458,7 +462,7 @@ describe('combinable source list (should pass)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>[]; error: \\"source should extend target type\\"; }'.
+      no errors
       "
     `)
   })
@@ -476,7 +480,7 @@ describe('combinable source list (should pass)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>[]; error: \\"source should extend target type\\"; }'.
+      no errors
       "
     `)
   })
@@ -492,7 +496,7 @@ describe('combinable source list (should fail)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Type 'EventCallable<[string]>' is not assignable to type 'Unit<number[]>'.
+      Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
       "
     `)
   })
@@ -507,7 +511,7 @@ describe('combinable source list (should fail)', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Type 'EventCallable<[string]>' is not assignable to type 'Unit<number[]>'.
+      Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
       "
     `)
   })

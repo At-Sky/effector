@@ -756,18 +756,21 @@ describe('derived unit in target', () => {
 
     function wrap() {
       sample({
+        //@ts-expect-error
         clock: trigger,
         //@ts-expect-error
         target: started,
       })
 
       sample({
+        //@ts-expect-error
         clock: trigger,
         //@ts-expect-error
         target: $storeMap,
       })
 
       sample({
+        //@ts-expect-error
         clock: trigger,
         fn: () => true,
         //@ts-expect-error
@@ -779,7 +782,85 @@ describe('derived unit in target', () => {
       "
       Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"derived units are not allowed in target\\"; got: Event<boolean>; }'.
       Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"derived units are not allowed in target\\"; got: Store<boolean>; }'.
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"derived units are not allowed in target\\"; got: (Store<boolean> | Event<boolean>)[]; }'.
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"derived units are not allowed in target\\"; got: readonly [Event<boolean>, StoreWritable<boolean>, Store<boolean>]; }'.
+      "
+    `)
+  })
+})
+
+describe('mix of wider and narrower types', () => {
+  test('source exact, target exact and narrower (should fail)', () => {
+    const exact = createEvent<{a: string; b: string}>()
+    const narrower = createEvent<{a: string}>()
+
+    sample({
+      //@ts-expect-error
+      source: exact,
+      target: [exact, narrower],
+    })
+
+    expect(typecheck).toMatchInlineSnapshot(`
+      "
+      no errors
+      "
+    `)
+  })
+  test('clock exact and narrower, target exact and narrower (should fail)', () => {
+    const exact = createEvent<{a: string; b: string}>()
+    const narrower = createEvent<{a: string}>()
+
+    sample({
+      //@ts-expect-error
+      clock: [exact, narrower],
+      target: [exact, narrower],
+    })
+
+    expect(typecheck).toMatchInlineSnapshot(`
+      "
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }, EventCallable<{ a: string; }>]; }'.
+      "
+    `)
+  })
+  test('clock exact, target exact and narrower (should fail)', () => {
+    const exact = createEvent<{a: string; b: string}>()
+    const narrower = createEvent<{a: string}>()
+
+    sample({
+      //@ts-expect-error
+      clock: [exact],
+      target: [exact, narrower],
+    })
+    sample({
+      //@ts-expect-error
+      clock: exact,
+      target: [exact, narrower],
+    })
+
+    expect(typecheck).toMatchInlineSnapshot(`
+      "
+      no errors
+      "
+    `)
+  })
+  test('clock exact and narrower, target exact (should fail)', () => {
+    const exact = createEvent<{a: string; b: string}>()
+    const narrower = createEvent<{a: string}>()
+
+    sample({
+      //@ts-expect-error
+      clock: [exact, narrower],
+      target: [exact],
+    })
+    sample({
+      //@ts-expect-error
+      clock: [exact, narrower],
+      target: exact,
+    })
+
+    expect(typecheck).toMatchInlineSnapshot(`
+      "
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }]; }'.
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }; }'.
       "
     `)
   })
