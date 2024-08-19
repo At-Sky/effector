@@ -2483,13 +2483,16 @@ describe('no source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+          Types of property '__' are incompatible.
+            Type 'AB | null' is not assignable to type 'AB'.
+              Type 'null' is not assignable to type 'AB'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
         'clk' is possibly 'null'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -2743,13 +2746,13 @@ describe('no source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
         'clk' is possibly 'null'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })

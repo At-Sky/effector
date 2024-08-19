@@ -292,22 +292,29 @@ const typecheck = '{global}'
           Types of property '__' are incompatible.
             Type 'string | number' is not assignable to type 'string'.
               Type 'number' is not assignable to type 'string'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: number; targetType: string; }]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: number; targetType: string | boolean; }]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [EventCallable<number>, { clockType: number; targetType: string; }]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [EventCallable<number>, { clockType: number; targetType: string | boolean; }]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: number; targetType: string | boolean; }, EventCallable<void>]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: number; targetType: string; }, EventCallable<void>]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [EventCallable<any>, { clockType: number; targetType: string; }]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [EventCallable<string | number>, { clockType: number; targetType: string; }]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [EventCallable<any>, { clockType: number; targetType: string | boolean; }]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [EventCallable<string | number>, { clockType: number; targetType: string | boolean; }]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: string; targetType: number; }]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: string; targetType: number; }, EventCallable<void>]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: string; targetType: number; }, EventCallable<string>]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [EventCallable<any>, { clockType: string; targetType: number; }]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: string; targetType: number; }, EventCallable<string | boolean>]; }'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: string; targetType: number; }, EventCallable<string | number>]; }'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<string>'.
         Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
         Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
         Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
