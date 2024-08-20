@@ -1802,8 +1802,10 @@ describe('object source', () => {
                 Types of property 'a' are incompatible.
                   Type 'number | null' is not assignable to type 'number'.
                     Type 'null' is not assignable to type 'number'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
+          Types of property '__' are incompatible.
+            Type '{ a: number; }' is not assignable to type 'string'.
         Parameter 'val' implicitly has an 'any' type.
-        Type 'string' is not assignable to type '{ a: number; }'.
         'val.a' is possibly 'null'.
         Type '(val: AB) => { a: number; b: string; }' is not assignable to type '((src: { readonly a: number | null; readonly b: string; }) => any) & ((val: AB) => { a: number; b: string; })'.
           Type '(val: AB) => { a: number; b: string; }' is not assignable to type '(src: { readonly a: number | null; readonly b: string; }) => any'.
@@ -1812,7 +1814,7 @@ describe('object source', () => {
                 Types of property 'a' are incompatible.
                   Type 'number | null' is not assignable to type 'number'.
                     Type 'null' is not assignable to type 'number'.
-        Type 'string' is not assignable to type '{ a: number; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
         Property 'c' does not exist on type '{ readonly a: number | null; readonly b: string; }'.
         Argument of type '[{ source: { a: StoreWritable<number | null>; b: StoreWritable<string>; }; target: EventCallable<{ a: number; }>; filter: (val: { readonly a: number | null; readonly b: string; }) => val is AB; fn: (val: ABN) => { ...; }; }]' is not assignable to parameter of type '[config: { source: { readonly a: StoreWritable<number | null>; readonly b: StoreWritable<string>; }; clock?: undefined; filter?: (((src: { readonly a: number | null; readonly b: string; }) => src is { ...; }) & ((src: { ...; }) => src is { ...; })) | undefined; fn?: (((src: { ...; }) => any) & ((src: { ...; }) => an...'.
           Type '[{ source: { a: StoreWritable<number | null>; b: StoreWritable<string>; }; target: EventCallable<{ a: number; }>; filter: (val: { readonly a: number | null; readonly b: string; }) => val is AB; fn: (val: ABN) => { ...; }; }]' is not assignable to type '[config: { source: { readonly a: StoreWritable<number | null>; readonly b: StoreWritable<string>; }; clock?: undefined; filter?: ((src: { readonly a: number | null; readonly b: string; }) => boolean) | undefined; fn?: ((src: { ...; }) => any) | undefined; target: EventCallable<...>; greedy?: boolean | undefined; bat...'.
@@ -1824,8 +1826,8 @@ describe('object source', () => {
                       Types of property 'a' are incompatible.
                         Type 'number | null' is not assignable to type 'number'.
                           Type 'null' is not assignable to type 'number'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
         Parameter 'val' implicitly has an 'any' type.
-        Type 'string' is not assignable to type '{ a: number; }'.
         "
       `)
     })
@@ -1904,11 +1906,11 @@ describe('object source', () => {
                 Types of property 'a' are incompatible.
                   Type 'number | null' is not assignable to type 'number'.
                     Type 'null' is not assignable to type 'number'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
         Parameter 'val' implicitly has an 'any' type.
-        Type 'string' is not assignable to type '{ a: number; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
         Parameter 'val' implicitly has an 'any' type.
         Parameter 'n' implicitly has an 'any' type.
-        Type 'string' is not assignable to type '{ a: number; }'.
         'val.a' is possibly 'null'.
         Type '(val: AB) => { a: number; b: string; }' is not assignable to type '((src: { readonly a: number | null; readonly b: string; }, clk: any) => any) & ((val: AB) => { a: number; b: string; })'.
           Type '(val: AB) => { a: number; b: string; }' is not assignable to type '(src: { readonly a: number | null; readonly b: string; }, clk: any) => any'.
@@ -1917,7 +1919,7 @@ describe('object source', () => {
                 Types of property 'a' are incompatible.
                   Type 'number | null' is not assignable to type 'number'.
                     Type 'null' is not assignable to type 'number'.
-        Type 'string' is not assignable to type '{ a: number; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
         Property 'c' does not exist on type '{ readonly a: number | null; readonly b: string; }'.
         Property 'c' does not exist on type '{ readonly a: number | null; readonly b: string; }'.
         Argument of type '[{ source: { a: StoreWritable<number | null>; b: StoreWritable<string>; }; clock: EventCallable<any>; target: EventCallable<{ a: number; }>; filter: (val: { ...; }) => val is AB; fn: (val: ABN) => { ...; }; }]' is not assignable to parameter of type '[config: { clock: EventCallable<any>; source: { readonly a: StoreWritable<number | null>; readonly b: StoreWritable<string>; }; filter?: (((src: { ...; }, clk: any) => src is { ...; }) & ((src: { ...; }, clk: any) => src is { ...; })) | undefined; fn?: (((src: { ...; }, clk: any) => any) & ((src: { ...; }, clk: any)...'.
@@ -1940,11 +1942,11 @@ describe('object source', () => {
                       Types of property 'a' are incompatible.
                         Type 'number | null' is not assignable to type 'number'.
                           Type 'null' is not assignable to type 'number'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
         Parameter 'val' implicitly has an 'any' type.
-        Type 'string' is not assignable to type '{ a: number; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
         Parameter 'val' implicitly has an 'any' type.
         Parameter 'n' implicitly has an 'any' type.
-        Type 'string' is not assignable to type '{ a: number; }'.
         "
       `)
     })
@@ -2023,11 +2025,11 @@ describe('object source', () => {
                 Types of property 'a' are incompatible.
                   Type 'number | null' is not assignable to type 'number'.
                     Type 'null' is not assignable to type 'number'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
         Parameter 'val' implicitly has an 'any' type.
-        Type 'string' is not assignable to type '{ a: number; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
         Parameter 'val' implicitly has an 'any' type.
         Parameter 'n' implicitly has an 'any' type.
-        Type 'string' is not assignable to type '{ a: number; }'.
         'val.a' is possibly 'null'.
         Type '(val: AB) => { a: number; b: string; }' is not assignable to type '((src: { readonly a: number | null; readonly b: string; }, clk: any) => any) & ((val: AB) => { a: number; b: string; })'.
           Type '(val: AB) => { a: number; b: string; }' is not assignable to type '(src: { readonly a: number | null; readonly b: string; }, clk: any) => any'.
@@ -2036,7 +2038,7 @@ describe('object source', () => {
                 Types of property 'a' are incompatible.
                   Type 'number | null' is not assignable to type 'number'.
                     Type 'null' is not assignable to type 'number'.
-        Type 'string' is not assignable to type '{ a: number; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
         Property 'c' does not exist on type '{ readonly a: number | null; readonly b: string; }'.
         Property 'c' does not exist on type '{ readonly a: number | null; readonly b: string; }'.
         Argument of type '[{ source: { a: StoreWritable<number | null>; b: StoreWritable<string>; }; clock: [EventCallable<any>]; target: EventCallable<{ a: number; }>; filter: (val: { ...; }) => val is AB; fn: (val: ABN) => { ...; }; }]' is not assignable to parameter of type '[config: { clock: readonly [EventCallable<any>]; source: { readonly a: StoreWritable<number | null>; readonly b: StoreWritable<string>; }; filter?: (((src: { ...; }, clk: any) => src is { ...; }) & ((src: { ...; }, clk: any) => src is { ...; })) | undefined; fn?: (((src: { ...; }, clk: any) => any) & ((src: { ...; }...'.
@@ -2059,11 +2061,11 @@ describe('object source', () => {
                       Types of property 'a' are incompatible.
                         Type 'number | null' is not assignable to type 'number'.
                           Type 'null' is not assignable to type 'number'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
         Parameter 'val' implicitly has an 'any' type.
-        Type 'string' is not assignable to type '{ a: number; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<string>'.
         Parameter 'val' implicitly has an 'any' type.
         Parameter 'n' implicitly has an 'any' type.
-        Type 'string' is not assignable to type '{ a: number; }'.
         "
       `)
     })
@@ -2704,13 +2706,17 @@ describe('no source', () => {
                   Types of parameters 'val' and 'clk' are incompatible.
                     Type 'AB | null' is not assignable to type 'ABN'.
                       Type 'null' is not assignable to type 'ABN'.
+        Type 'StoreWritable<AB>' is not assignable to type 'Unit<{ a: number; b: number; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
         Parameter 'clk' implicitly has an 'any' type.
-        Type 'number' is not assignable to type 'string'.
         Type '(val: ABN) => { a: number; b: number; }' is not assignable to type '((clk: AB) => any) & ((val: ABN) => { a: number; b: number; })'.
           Type '(val: ABN) => { a: number; b: number; }' is not assignable to type '(clk: AB) => any'.
             Types of parameters 'val' and 'clk' are incompatible.
               Type 'AB' is not assignable to type 'ABN'.
-        Type 'number' is not assignable to type 'string'.
+        Type 'StoreWritable<AB>' is not assignable to type 'Unit<{ a: number; b: number; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
         "
       `)
     })
@@ -2962,13 +2968,17 @@ describe('no source', () => {
                   Types of parameters 'val' and 'clk' are incompatible.
                     Type 'AB | null' is not assignable to type 'ABN'.
                       Type 'null' is not assignable to type 'ABN'.
+        Type 'StoreWritable<AB>' is not assignable to type 'Unit<{ a: number; b: number; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
         Parameter 'clk' implicitly has an 'any' type.
-        Type 'number' is not assignable to type 'string'.
         Type '(val: ABN) => { a: number; b: number; }' is not assignable to type '((clk: AB) => any) & ((val: ABN) => { a: number; b: number; })'.
           Type '(val: ABN) => { a: number; b: number; }' is not assignable to type '(clk: AB) => any'.
             Types of parameters 'val' and 'clk' are incompatible.
               Type 'AB' is not assignable to type 'ABN'.
-        Type 'number' is not assignable to type 'string'.
+        Type 'StoreWritable<AB>' is not assignable to type 'Unit<{ a: number; b: number; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
         "
       `)
     })

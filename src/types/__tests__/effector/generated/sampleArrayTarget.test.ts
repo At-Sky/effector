@@ -602,66 +602,93 @@ const typecheck = '{global}'
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string | boolean'.
-        Type 'number' is not assignable to type 'string | EventCallable<number>'.
-        Type 'number' is not assignable to type 'string | boolean | EventCallable<number>'.
-        Type 'number' is not assignable to type 'string | boolean | void'.
-        Type 'number' is not assignable to type 'string | void'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ fn: (src: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type 'number' is not assignable to type 'string | EventCallable<string | number>'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ fn: (src: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type 'number' is not assignable to type 'string | boolean | EventCallable<string | number>'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number | void'.
-        Type 'string' is not assignable to type 'number | EventCallable<string>'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ fn: (src: string) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type 'string' is not assignable to type 'number | EventCallable<string | boolean>'.
-        Type 'string' is not assignable to type 'number | EventCallable<string | number>'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string | boolean'.
-        Type 'number' is not assignable to type 'string | EventCallable<number>'.
-        Type 'number' is not assignable to type 'string | boolean | EventCallable<number>'.
-        Type 'number' is not assignable to type 'string | boolean | void'.
-        Type 'number' is not assignable to type 'string | void'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ fn: (clk: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type 'number' is not assignable to type 'string | EventCallable<string | number>'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ fn: (clk: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type 'number' is not assignable to type 'string | boolean | EventCallable<string | number>'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number | void'.
-        Type 'string' is not assignable to type 'number | EventCallable<string>'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ fn: (clk: string) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type 'string' is not assignable to type 'number | EventCallable<string | boolean>'.
-        Type 'string' is not assignable to type 'number | EventCallable<string | number>'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string | boolean'.
-        Type 'number' is not assignable to type 'string | EventCallable<number>'.
-        Type 'number' is not assignable to type 'string | boolean | EventCallable<number>'.
-        Type 'number' is not assignable to type 'string | boolean | void'.
-        Type 'number' is not assignable to type 'string | void'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ fn: (src: number, clk: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type 'number' is not assignable to type 'string | EventCallable<string | number>'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ fn: (src: number, clk: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type 'number' is not assignable to type 'string | boolean | EventCallable<string | number>'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number | void'.
-        Type 'string' is not assignable to type 'number | EventCallable<string>'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ fn: (src: number, clk: string) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type 'string' is not assignable to type 'number | EventCallable<string | boolean>'.
-        Type 'string' is not assignable to type 'number | EventCallable<string | number>'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number | void'.
-        Type 'string' is not assignable to type 'number | EventCallable<string>'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ fn: (src: string, clk: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type 'string' is not assignable to type 'number | EventCallable<string | boolean>'.
-        Type 'string' is not assignable to type 'number | EventCallable<string | number>'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number | void'.
-        Type 'string' is not assignable to type 'number | EventCallable<string>'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ fn: (src: string, clk: string) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type 'string' is not assignable to type 'number | EventCallable<string | boolean>'.
-        Type 'string' is not assignable to type 'number | EventCallable<string | number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<string>'.
         "
       `)
     })
@@ -853,60 +880,48 @@ const typecheck = '{global}'
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Type '(src: number) => number' is not assignable to type '(src: number) => string'.
-          Type 'number' is not assignable to type 'string'.
-        Type '(src: number) => number' is not assignable to type '(src: number) => string | boolean'.
-          Type 'number' is not assignable to type 'string | boolean'.
-        Type '(src: number) => number' is not assignable to type '(src: number) => string | EventCallable<number>'.
-          Type 'number' is not assignable to type 'string | EventCallable<number>'.
-        Type '(src: number) => number' is not assignable to type '(src: number) => string | boolean | EventCallable<number>'.
-          Type 'number' is not assignable to type 'string | boolean | EventCallable<number>'.
-        Type '(src: number) => number' is not assignable to type '(src: number) => string | boolean | void'.
-          Type 'number' is not assignable to type 'string | boolean | void'.
-        Type '(src: number) => number' is not assignable to type '(src: number) => string | void'.
-          Type 'number' is not assignable to type 'string | void'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ fn: (src: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type '(src: number) => number' is not assignable to type '(src: number) => string | EventCallable<string | number>'.
-          Type 'number' is not assignable to type 'string | EventCallable<string | number>'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ fn: (src: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type '(src: number) => number' is not assignable to type '(src: number) => string | boolean | EventCallable<string | number>'.
-          Type 'number' is not assignable to type 'string | boolean | EventCallable<string | number>'.
-        Type '(clk: number) => number' is not assignable to type '(clk: number) => string'.
-          Type 'number' is not assignable to type 'string'.
-        Type '(clk: number) => number' is not assignable to type '(clk: number) => string | boolean'.
-          Type 'number' is not assignable to type 'string | boolean'.
-        Type '(clk: number) => number' is not assignable to type '(clk: number) => string | EventCallable<number>'.
-          Type 'number' is not assignable to type 'string | EventCallable<number>'.
-        Type '(clk: number) => number' is not assignable to type '(clk: number) => string | boolean | EventCallable<number>'.
-          Type 'number' is not assignable to type 'string | boolean | EventCallable<number>'.
-        Type '(clk: number) => number' is not assignable to type '(clk: number) => string | boolean | void'.
-          Type 'number' is not assignable to type 'string | boolean | void'.
-        Type '(clk: number) => number' is not assignable to type '(clk: number) => string | void'.
-          Type 'number' is not assignable to type 'string | void'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ fn: (clk: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type '(clk: number) => number' is not assignable to type '(clk: number) => string | EventCallable<string | number>'.
-          Type 'number' is not assignable to type 'string | EventCallable<string | number>'.
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ fn: (clk: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type '(clk: number) => number' is not assignable to type '(clk: number) => string | boolean | EventCallable<string | number>'.
-          Type 'number' is not assignable to type 'string | boolean | EventCallable<string | number>'.
-        Type '(src: number, clk: number) => number' is not assignable to type '(src: number, clk: number) => string'.
-          Type 'number' is not assignable to type 'string'.
-        Type '(src: number, clk: number) => number' is not assignable to type '(src: number, clk: number) => string | boolean'.
-          Type 'number' is not assignable to type 'string | boolean'.
-        Type '(src: number, clk: number) => number' is not assignable to type '(src: number, clk: number) => string | EventCallable<number>'.
-          Type 'number' is not assignable to type 'string | EventCallable<number>'.
-        Type '(src: number, clk: number) => number' is not assignable to type '(src: number, clk: number) => string | boolean | EventCallable<number>'.
-          Type 'number' is not assignable to type 'string | boolean | EventCallable<number>'.
-        Type '(src: number, clk: number) => number' is not assignable to type '(src: number, clk: number) => string | boolean | void'.
-          Type 'number' is not assignable to type 'string | boolean | void'.
-        Type '(src: number, clk: number) => number' is not assignable to type '(src: number, clk: number) => string | void'.
-          Type 'number' is not assignable to type 'string | void'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ fn: (src: number, clk: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type '(src: number, clk: number) => number' is not assignable to type '(src: number, clk: number) => string | EventCallable<string | number>'.
-          Type 'number' is not assignable to type 'string | EventCallable<string | number>'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ fn: (src: number, clk: number) => unknown; error: \\"fn result should extend target type\\"; }'.
-        Type '(src: number, clk: number) => number' is not assignable to type '(src: number, clk: number) => string | boolean | EventCallable<string | number>'.
-          Type 'number' is not assignable to type 'string | boolean | EventCallable<string | number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
         Type '(src: number, clk: number) => number' is not assignable to type '((src: number, clk: string) => any) & ((src: number, clk: number) => number)'.
           Type '(src: number, clk: number) => number' is not assignable to type '(src: number, clk: string) => any'.
             Types of parameters 'clk' and 'clk' are incompatible.
@@ -1542,54 +1557,204 @@ const typecheck = '{global}'
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
         "
       `)
     })
@@ -1979,54 +2144,204 @@ const typecheck = '{global}'
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'string' is not assignable to type 'number'.
-        Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
         "
       `)
     })

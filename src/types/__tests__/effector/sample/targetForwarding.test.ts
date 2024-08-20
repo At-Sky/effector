@@ -234,11 +234,14 @@ describe('edge case for {} type', () => {
     const target = createEvent<{a: string; b: string}>()
     //@ts-expect-error
     sample({source, clock, fn, target})
+    //@ts-expect-error
+    sample({source, clock, fn: () => ({}), target})
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
       Type '() => {}' is not assignable to type '() => { a: string; b: string; }'.
         Type '{}' is missing the following properties from type '{ a: string; b: string; }': a, b
+      Type '{}' is missing the following properties from type '{ a: string; b: string; }': a, b
       "
     `)
   })

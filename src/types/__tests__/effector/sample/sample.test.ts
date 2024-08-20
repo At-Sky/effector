@@ -629,7 +629,9 @@ describe('clock without source', () => {
     })
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Type 'string' is not assignable to type 'number'.
+      Type 'StoreWritable<number>' is not assignable to type 'Unit<string>'.
+        Types of property '__' are incompatible.
+          Type 'number' is not assignable to type 'string'.
       "
     `)
   })
@@ -648,7 +650,9 @@ describe('clock without source', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Type 'boolean' is not assignable to type 'number'.
+      Type 'StoreWritable<number>' is not assignable to type 'Unit<boolean>'.
+        Types of property '__' are incompatible.
+          Type 'number' is not assignable to type 'boolean'.
       "
     `)
   })
@@ -666,8 +670,6 @@ describe('clock without source', () => {
     expect(typecheck).toMatchInlineSnapshot(`
       "
       Type 'StoreWritable<number>' is not assignable to type 'Unit<string>'.
-        Types of property '__' are incompatible.
-          Type 'number' is not assignable to type 'string'.
       "
     `)
   })
