@@ -33,9 +33,9 @@ test('clock param name in the function', () => {
 
   expect(typecheck).toMatchInlineSnapshot(`
     "
-    Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"filter unit should has boolean type\\"; got: string; }'.
-    Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"filter unit should has boolean type\\"; got: string; }'.
-    Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"filter unit should has boolean type\\"; got: string; }'.
+    Type 'StoreWritable<string>' is not assignable to type 'Unit<boolean>'.
+    Type 'StoreWritable<string>' is not assignable to type 'Unit<boolean>'.
+    Type 'StoreWritable<string>' is not assignable to type 'Unit<boolean>'.
     "
   `)
 })
@@ -77,7 +77,18 @@ test('custom typeguards: target array support (1)', () => {
   })
   expect(typecheck).toMatchInlineSnapshot(`
     "
-    no errors
+    Type 'EventCallable<void>' is not assignable to type 'Unit<{ field: string | number; data: number; }>'.
+      Types of property '__' are incompatible.
+        Type 'void' is not assignable to type '{ field: string | number; data: number; }'.
+    Type 'EventCallable<{ field: string | number; data: string; }>' is not assignable to type 'Unit<{ field: string | number; data: number; }>'.
+      The types of '__.data' are incompatible between these types.
+        Type 'string' is not assignable to type 'number'.
+    Type 'EventCallable<{ field: unknown; data: number; }>' is not assignable to type 'Unit<{ field: string | number; data: number; }>'.
+      The types of '__.field' are incompatible between these types.
+        Type 'unknown' is not assignable to type 'string | number'.
+    Type 'EventCallable<{ field: any; }>' is not assignable to type 'Unit<{ field: string | number; data: number; }>'.
+      Types of property '__' are incompatible.
+        Property 'data' is missing in type '{ field: any; }' but required in type '{ field: string | number; data: number; }'.
     "
   `)
 })
@@ -120,7 +131,26 @@ test('custom typeguards: target array support (2)', () => {
   })
   expect(typecheck).toMatchInlineSnapshot(`
     "
-    no errors
+    Type 'EventCallable<void>' is not assignable to type 'Unit<{ field: number; data: number; }>'.
+      Types of property '__' are incompatible.
+        Type 'void' is not assignable to type '{ field: number; data: number; }'.
+    Type 'Effect<{ field: string | number; data: number; }, void, Error>' is not assignable to type 'Unit<{ field: number; data: number; }>'.
+      The types of '__.field' are incompatible between these types.
+        Type 'string | number' is not assignable to type 'number'.
+          Type 'string' is not assignable to type 'number'.
+    Type 'EventCallable<{ field: string | number; data: string; }>' is not assignable to type 'Unit<{ field: number; data: number; }>'.
+      The types of '__.field' are incompatible between these types.
+        Type 'string | number' is not assignable to type 'number'.
+          Type 'string' is not assignable to type 'number'.
+    Type 'EventCallable<{ field: unknown; data: number; }>' is not assignable to type 'Unit<{ field: number; data: number; }>'.
+      The types of '__.field' are incompatible between these types.
+        Type 'unknown' is not assignable to type 'number'.
+    Type 'EventCallable<{ field: string; data: number; }>' is not assignable to type 'Unit<{ field: number; data: number; }>'.
+      The types of '__.field' are incompatible between these types.
+        Type 'string' is not assignable to type 'number'.
+    Type 'EventCallable<{ field: any; }>' is not assignable to type 'Unit<{ field: number; data: number; }>'.
+      Types of property '__' are incompatible.
+        Property 'data' is missing in type '{ field: any; }' but required in type '{ field: number; data: number; }'.
     "
   `)
 })

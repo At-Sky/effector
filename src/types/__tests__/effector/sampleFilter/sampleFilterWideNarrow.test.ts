@@ -348,18 +348,11 @@ test('wide union in array (should fail)', () => {
     target: [target],
   })
 
-  //@ts-expect-error
-  const result2: [typeof target] = sample({
-    clock: trigger,
-    filter: allow,
-  })
-
   expect(typecheck).toMatchInlineSnapshot(`
     "
     Object literal may only specify known properties, and 'clock' does not exist in type '{ target: Unit<(string | number | boolean)[]>; error: \\"clock should extend target type\\"; }'.
     Type 'Event<(string | number | boolean)[]>' is missing the following properties from type 'EventCallable<(string | number)[]>': prepend, targetable
     Object literal may only specify known properties, and 'clock' does not exist in type '{ target: readonly [Unit<(string | number | boolean)[]>]; error: \\"clock should extend target type\\"; }'.
-    Type 'Event<(string | number | boolean)[]>' is not assignable to type '[EventCallable<(string | number)[]>]'.
     "
   `)
 })

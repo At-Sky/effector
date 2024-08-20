@@ -54,7 +54,9 @@ describe('sample(config)', () => {
 
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"filter unit should has boolean type\\"; got: string; }'.
+        Type 'StoreWritable<string>' is not assignable to type 'Unit<boolean>'.
+          Types of property '__' are incompatible.
+            Type 'string' is not assignable to type 'boolean'.
         "
       `)
     })
@@ -70,7 +72,7 @@ describe('sample(config)', () => {
 
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"filter unit should has boolean type\\"; got: string; }'.
+        Type 'StoreWritable<string>' is not assignable to type 'Unit<boolean>'.
         "
       `)
     })
