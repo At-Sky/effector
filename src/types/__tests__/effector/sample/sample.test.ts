@@ -761,21 +761,18 @@ describe('derived unit in target', () => {
 
     function wrap() {
       sample({
-        //@ts-expect-error
         clock: trigger,
         //@ts-expect-error
         target: started,
       })
 
       sample({
-        //@ts-expect-error
         clock: trigger,
         //@ts-expect-error
         target: $storeMap,
       })
 
       sample({
-        //@ts-expect-error
         clock: trigger,
         fn: () => true,
         //@ts-expect-error
@@ -785,9 +782,10 @@ describe('derived unit in target', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"derived units are not allowed in target\\"; got: Event<boolean>; }'.
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"derived units are not allowed in target\\"; got: Store<boolean>; }'.
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"derived units are not allowed in target\\"; got: readonly [Event<boolean>, StoreWritable<boolean>, Store<boolean>]; }'.
+      Type 'Event<boolean>' is missing the following properties from type 'EventCallable<boolean>': prepend, targetable
+      Type 'Store<boolean>' is missing the following properties from type 'StoreWritable<boolean>': ____, on, off, reset, and 2 more.
+      Type 'Event<boolean>' is not assignable to type 'EventCallable<boolean>'.
+      Type 'Store<boolean>' is not assignable to type 'StoreWritable<boolean>'.
       "
     `)
   })
