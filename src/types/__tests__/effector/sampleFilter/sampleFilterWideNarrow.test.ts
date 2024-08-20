@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import {createStore, createEvent, sample, EventCallable} from 'effector'
+import {createStore, createEvent, sample, EventCallable, Event} from 'effector'
 const typecheck = '{global}'
 
 test('wide union (should fail)', () => {
@@ -324,9 +324,9 @@ test('narrow tuple (should fail)', () => {
 })
 
 test('wide union in array (should fail)', () => {
-  const trigger: EventCallable<Array<number | string | boolean>> = createEvent()
+  const trigger = createEvent<Array<number | string | boolean>>()
   const allow = createStore<boolean>(true)
-  const target: EventCallable<Array<number | string>> = createEvent()
+  const target = createEvent<Array<number | string>>()
 
   sample({
     //@ts-expect-error
@@ -336,7 +336,7 @@ test('wide union in array (should fail)', () => {
   })
 
   //@ts-expect-error
-  const result1: typeof target = sample({
+  const result1: Event<Array<number | string>> = sample({
     clock: trigger,
     filter: allow,
   })
@@ -350,9 +350,14 @@ test('wide union in array (should fail)', () => {
 
   expect(typecheck).toMatchInlineSnapshot(`
     "
-    Object literal may only specify known properties, and 'clock' does not exist in type '{ target: Unit<(string | number | boolean)[]>; error: \\"clock should extend target type\\"; }'.
-    Type 'Event<(string | number | boolean)[]>' is missing the following properties from type 'EventCallable<(string | number)[]>': prepend, targetable
-    Object literal may only specify known properties, and 'clock' does not exist in type '{ target: readonly [Unit<(string | number | boolean)[]>]; error: \\"clock should extend target type\\"; }'.
+    Type 'EventCallable<(string | number | boolean)[]>' is not assignable to type 'Unit<(string | number)[]>'.
+      Types of property '__' are incompatible.
+        Type '(string | number | boolean)[]' is not assignable to type '(string | number)[]'.
+          Type 'string | number | boolean' is not assignable to type 'string | number'.
+            Type 'boolean' is not assignable to type 'string | number'.
+    Type 'Event<(string | number | boolean)[]>' is not assignable to type 'Event<(string | number)[]>'.
+      Type '(string | number | boolean)[]' is not assignable to type '(string | number)[]'.
+    Type 'EventCallable<(string | number | boolean)[]>' is not assignable to type 'Unit<(string | number)[]>'.
     "
   `)
 })
