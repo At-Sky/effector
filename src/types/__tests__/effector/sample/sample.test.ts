@@ -281,12 +281,12 @@ describe('generic edge cases', () => {
     }
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Argument of type '[{ source: StoreWritable<A>; clock: EventCallable<B>; target: EventCallable<B>; }]' is not assignable to parameter of type 'TargetOrError<A, \\"src\\", EventCallable<B>, { clock: EventCallable<B>; source: StoreWritable<A>; filter?: undefined; target: EventCallable<B>; greedy?: boolean | undefined; batch?: boolean | undefined; } & { ...; }, \\"noFn\\", StoreWritable<...>, EventCallable<...>>'.
-      Argument of type '[{ source: StoreWritable<A>; clock: EventCallable<B>; fn: (source: A, clock: B) => A; target: EventCallable<B>; }]' is not assignable to parameter of type 'TargetOrError<A, \\"fnRet\\", EventCallable<B>, { clock: EventCallable<B>; source: StoreWritable<A>; filter?: undefined; fn: (source: A, clock: B) => A; target: EventCallable<...>; greedy?: boolean | undefined; batch?: boolean | undefined; } & { ...; }, (source: A, clock: B) => A, \\"noSrc\\", \\"noClk\\">'.
-      Argument of type '[{ source: StoreWritable<A>; clock: EventCallable<B>; fn: (source: A, clock: B) => B; target: StoreWritable<A>; }]' is not assignable to parameter of type 'TargetOrError<B, \\"fnRet\\", StoreWritable<A>, { clock: EventCallable<B>; source: StoreWritable<A>; filter?: undefined; fn: (source: A, clock: B) => B; target: StoreWritable<...>; greedy?: boolean | undefined; batch?: boolean | undefined; } & { ...; }, (source: A, clock: B) => B, \\"noSrc\\", \\"noClk\\">'.
-      Argument of type '[{ clock: EventCallable<B>; source: StoreWritable<A>; filter: BooleanConstructor; target: EventCallable<B>; }]' is not assignable to parameter of type 'TargetOrError<NonFalsy<A>, \\"src\\", EventCallable<B>, { clock: EventCallable<B>; source: StoreWritable<A>; filter: BooleanConstructor; target: EventCallable<...>; greedy?: boolean | undefined; batch?: boolean | undefined; } & { ...; }, \\"noFn\\", StoreWritable<...>, EventCallable<...>>'.
-      Argument of type '[{ clock: EventCallable<B>; source: StoreWritable<A>; filter: BooleanConstructor; fn: (source: NonFalsy<A>, clock: B) => B; target: StoreWritable<...>; }]' is not assignable to parameter of type 'TargetOrError<B, \\"fnRet\\", StoreWritable<A>, { clock: EventCallable<B>; source: StoreWritable<A>; filter?: BooleanConstructor | undefined; fn?: ((source: NonFalsy<...>, clock: B) => B) | undefined; target: StoreWritable<...>; greedy?: boolean | undefined; batch?: boolean | undefined; } & { ...; }, (source: NonFalsy<....'.
-      Argument of type '[{ clock: EventCallable<B>; source: StoreWritable<A>; filter: (source: A, clock: B) => true; fn: (source: A, clock: B) => B; target: StoreWritable<...>; }]' is not assignable to parameter of type 'TargetOrError<B, \\"fnRet\\", StoreWritable<A>, { clock: EventCallable<B>; source: StoreWritable<A>; filter?: ((source: A, clock: B) => true) | undefined; fn?: ((source: A, clock: B) => B) | undefined; target: StoreWritable<...>; greedy?: boolean | undefined; batch?: boolean | undefined; } & { ...; }, (source: A, clock:...'.
+      Argument of type '[{ source: StoreWritable<A>; clock: EventCallable<B>; target: EventCallable<B>; }]' is not assignable to parameter of type '[[A] extends [Readonly<B>] ? EventCallable<B> : WhichType<B> extends \\"any\\" | \\"void\\" ? EventCallable<B> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : ([...] extends [...] ? \\"yes\\" : \\"no\\") extends \\"yes\\" ? [error: ...] : [error: ...]'.
+      Argument of type '[{ source: StoreWritable<A>; clock: EventCallable<B>; fn: (source: A, clock: B) => A; target: EventCallable<B>; }]' is not assignable to parameter of type '[[A] extends [Readonly<B>] ? EventCallable<B> : WhichType<B> extends \\"any\\" | \\"void\\" ? EventCallable<B> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : ([...] extends [...] ? \\"yes\\" : \\"no\\") extends \\"yes\\" ? [error: ...] : [error: ...]'.
+      Argument of type '[{ source: StoreWritable<A>; clock: EventCallable<B>; fn: (source: A, clock: B) => B; target: StoreWritable<A>; }]' is not assignable to parameter of type '[[B] extends [Readonly<A>] ? StoreWritable<A> : WhichType<A> extends \\"any\\" | \\"void\\" ? StoreWritable<A> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : ([...] extends [...] ? \\"yes\\" : \\"no\\") extends \\"yes\\" ? [error: ...] : [error: ...]'.
+      Argument of type '[{ clock: EventCallable<B>; source: StoreWritable<A>; filter: BooleanConstructor; target: EventCallable<B>; }]' is not assignable to parameter of type '[[NonFalsy<A>] extends [Readonly<B>] ? EventCallable<B> : WhichType<B> extends \\"any\\" | \\"void\\" ? EventCallable<B> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : ([...] extends [...] ? \\"yes\\" : \\"no\\") extends \\"yes\\" ? [error: ...] : [error: ...]'.
+      Argument of type '[{ clock: EventCallable<B>; source: StoreWritable<A>; filter: BooleanConstructor; fn: (source: NonFalsy<A>, clock: B) => B; target: StoreWritable<...>; }]' is not assignable to parameter of type '[[B] extends [Readonly<A>] ? StoreWritable<A> : WhichType<A> extends \\"any\\" | \\"void\\" ? StoreWritable<A> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : ([...] extends [...] ? \\"yes\\" : \\"no\\") extends \\"yes\\" ? [error: ...] : [error: ...]'.
+      Argument of type '[{ clock: EventCallable<B>; source: StoreWritable<A>; filter: (source: A, clock: B) => true; fn: (source: A, clock: B) => B; target: StoreWritable<...>; }]' is not assignable to parameter of type '[[B] extends [Readonly<A>] ? StoreWritable<A> : WhichType<A> extends \\"any\\" | \\"void\\" ? StoreWritable<A> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : ([...] extends [...] ? \\"yes\\" : \\"no\\") extends \\"yes\\" ? [error: ...] : [error: ...]'.
       "
     `)
   })
@@ -622,8 +622,8 @@ describe('clock without source', () => {
     const target = createStore(1)
     sample({
       clock: foo,
-      //@ts-expect-error
       fn: foo => foo,
+      //@ts-expect-error
       target,
     })
     expect(typecheck).toMatchInlineSnapshot(`
@@ -641,8 +641,8 @@ describe('clock without source', () => {
 
     sample({
       clock: [foo, bar],
-      //@ts-expect-error
       fn: foo => true,
+      //@ts-expect-error
       target,
     })
 
@@ -661,12 +661,16 @@ describe('clock without source', () => {
     sample({
       //@ts-expect-error
       clock: foo,
+      //@ts-expect-error
       target,
     })
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Type 'StoreWritable<number>' is not assignable to type 'Unit<string>'.
+      Type 'StoreWritable<string>' is not assignable to type 'Unit<number>'.
+      Type 'StoreWritable<number>' is not assignable to type 'UnitTargetable<string>'.
+        Types of property '__' are incompatible.
+          Type 'number' is not assignable to type 'string'.
       "
     `)
   })
@@ -680,6 +684,7 @@ describe('clock without source', () => {
     sample({
       //@ts-expect-error
       clock: [foo, bar, baz],
+      //@ts-expect-error
       target,
     })
 
@@ -689,6 +694,7 @@ describe('clock without source', () => {
       Type 'StoreWritable<boolean>' is not assignable to type 'Unit<number>'.
         Types of property '__' are incompatible.
           Type 'boolean' is not assignable to type 'number'.
+      Type 'StoreWritable<number>' is not assignable to type 'UnitTargetable<string>'.
       "
     `)
   })
@@ -790,12 +796,12 @@ describe('derived unit in target', () => {
 })
 
 describe('mix of wider and narrower types', () => {
-  test('source exact, target exact and narrower (should fail)', () => {
+  /** exact type match is hard, so we accept wider types here */
+  test('source exact, target exact and narrower (should pass)', () => {
     const exact = createEvent<{a: string; b: string}>()
     const narrower = createEvent<{a: string}>()
 
     sample({
-      //@ts-expect-error
       source: exact,
       target: [exact, narrower],
     })
@@ -818,21 +824,22 @@ describe('mix of wider and narrower types', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'target' does not exist in type '{ clock: readonly [Unit<{ a: string; b: string; } | { a: string; }>, Unit<{ a: string; b: string; } | { a: string; }>]; error: \\"clock should extend target type\\"; }'.
+      Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
+        Types of property '__' are incompatible.
+          Property 'b' is missing in type '{ a: string; }' but required in type '{ a: string; b: string; }'.
       "
     `)
   })
-  test('clock exact, target exact and narrower (should fail)', () => {
+  /** exact type match is hard, so we accept wider types here */
+  test('clock exact, target exact and narrower (should pass)', () => {
     const exact = createEvent<{a: string; b: string}>()
     const narrower = createEvent<{a: string}>()
 
     sample({
-      //@ts-expect-error
       clock: [exact],
       target: [exact, narrower],
     })
     sample({
-      //@ts-expect-error
       clock: exact,
       target: [exact, narrower],
     })
@@ -840,6 +847,123 @@ describe('mix of wider and narrower types', () => {
     expect(typecheck).toMatchInlineSnapshot(`
       "
       no errors
+      "
+    `)
+  })
+  test('clock exact nullable, target exact and narrower (should fail)', () => {
+    const clock = createEvent<{a: string; b: string} | null>()
+    const exact = createEvent<{a: string; b: string}>()
+    const narrower = createEvent<{a: string}>()
+
+    sample({
+      //@ts-expect-error
+      clock: [clock],
+      //@ts-expect-error
+      target: [exact, narrower],
+    })
+    sample({
+      //@ts-expect-error
+      clock,
+      //@ts-expect-error
+      target: [exact, narrower],
+    })
+    sample({
+      //@ts-expect-error
+      clock,
+      target: [exact],
+    })
+
+    expect(typecheck).toMatchInlineSnapshot(`
+      "
+      Type 'EventCallable<{ a: string; b: string; } | null>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
+        Types of property '__' are incompatible.
+          Type '{ a: string; b: string; } | null' is not assignable to type '{ a: string; b: string; }'.
+            Type 'null' is not assignable to type '{ a: string; b: string; }'.
+      Type 'EventCallable<{ a: string; }>' is not assignable to type 'UnitTargetable<{ a: string; b: string; } | null>'.
+        Types of property '__' are incompatible.
+          Property 'b' is missing in type '{ a: string; }' but required in type '{ a: string; b: string; }'.
+      Type 'EventCallable<{ a: string; b: string; } | null>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
+      Type 'EventCallable<{ a: string; }>' is not assignable to type 'UnitTargetable<{ a: string; b: string; } | null>'.
+      Type 'EventCallable<{ a: string; b: string; } | null>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
+      "
+    `)
+  })
+  /** exact type match is hard, so we accept wider types here */
+  test('clock exact nullable, target exact and narrower, filter Boolean (should pass)', () => {
+    const clock = createEvent<{a: string; b: string} | null>()
+    const exact = createEvent<{a: string; b: string}>()
+    const narrower = createEvent<{a: string}>()
+
+    sample({
+      clock: [clock],
+      filter: Boolean,
+      target: [exact, narrower],
+    })
+    sample({
+      clock,
+      filter: Boolean,
+      target: [exact, narrower],
+    })
+    sample({
+      clock,
+      filter: Boolean,
+      target: [exact],
+    })
+
+    expect(typecheck).toMatchInlineSnapshot(`
+      "
+      no errors
+      "
+    `)
+  })
+  test('clock exact and narrower nullable, target exact and narrower, filter Boolean (should fail)', () => {
+    const clockExact = createEvent<{a: string; b: string} | null>()
+    const clockNarrower = createEvent<{a: string} | null>()
+    const exact = createEvent<{a: string; b: string}>()
+    const narrower = createEvent<{a: string}>()
+
+    sample({
+      clock: [
+        clockExact,
+        //@ts-expect-error
+        clockNarrower,
+      ],
+      filter: Boolean,
+      target: [exact, narrower],
+    })
+    sample({
+      clock: [clockExact, clockNarrower],
+      filter: Boolean,
+      target: [narrower],
+    })
+    sample({
+      clock: [
+        clockExact,
+        //@ts-expect-error
+        clockNarrower,
+      ],
+      filter: Boolean,
+      target: [exact],
+    })
+
+    expect(typecheck).toMatchInlineSnapshot(`
+      "
+      Type 'EventCallable<{ a: string; b: string; } | null>' is not assignable to type 'Unit<{ a: string; b: string; } | { a: string; }>'.
+        Types of property '__' are incompatible.
+          Type '{ a: string; b: string; } | null' is not assignable to type '{ a: string; b: string; } | { a: string; }'.
+            Type 'null' is not assignable to type '{ a: string; b: string; } | { a: string; }'.
+      Type 'EventCallable<{ a: string; } | null>' is not assignable to type 'Unit<{ a: string; b: string; } | { a: string; }>'.
+        Types of property '__' are incompatible.
+          Type '{ a: string; } | null' is not assignable to type '{ a: string; b: string; } | { a: string; }'.
+            Type 'null' is not assignable to type '{ a: string; b: string; } | { a: string; }'.
+      Type 'EventCallable<{ a: string; b: string; } | null>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
+        Types of property '__' are incompatible.
+          Type '{ a: string; b: string; } | null' is not assignable to type '{ a: string; b: string; }'.
+            Type 'null' is not assignable to type '{ a: string; b: string; }'.
+      Type 'EventCallable<{ a: string; } | null>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
+        Types of property '__' are incompatible.
+          Type '{ a: string; } | null' is not assignable to type '{ a: string; b: string; }'.
+            Type 'null' is not assignable to type '{ a: string; b: string; }'.
       "
     `)
   })
@@ -915,17 +1039,19 @@ describe('mix of wider and narrower types', () => {
       "
     `)
   })
-  test('should not mark correct case near incorrect with clock (should pass)', () => {
+  test('should not mark correct case near incorrect with clock (should fail)', () => {
     const clock = createEvent<{a: string; b: string}>()
     const incorrect = createEvent<{a: number}>()
     const correct = createEvent<{a: string; b: string} | {a: number}>()
 
+    // this should pass
     sample({
       clock,
       target: [correct],
     })
 
     sample({
+      //@ts-expect-error
       clock,
       target: [
         correct,
@@ -934,6 +1060,7 @@ describe('mix of wider and narrower types', () => {
       ],
     })
     sample({
+      //@ts-expect-error
       clock: [clock],
       target: [
         correct,
@@ -943,15 +1070,14 @@ describe('mix of wider and narrower types', () => {
     })
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Type 'EventCallable<{ a: string; b: string; } | { a: number; }>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
-        Types of property '__' are incompatible.
-          Type '{ a: string; b: string; } | { a: number; }' is not assignable to type '{ a: string; b: string; }'.
-            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: string; b: string; }'.
-      Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
+      Type 'EventCallable<{ a: string; b: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+        The types of '__.a' are incompatible between these types.
+          Type 'string' is not assignable to type 'number'.
+      Type 'EventCallable<{ a: number; }>' is not assignable to type 'UnitTargetable<{ a: string; b: string; }>'.
         Types of property '__' are incompatible.
           Property 'b' is missing in type '{ a: number; }' but required in type '{ a: string; b: string; }'.
-      Type 'EventCallable<{ a: string; b: string; } | { a: number; }>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
-      Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
+      Type 'EventCallable<{ a: string; b: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+      Type 'EventCallable<{ a: number; }>' is not assignable to type 'UnitTargetable<{ a: string; b: string; }>'.
       "
     `)
   })
@@ -964,18 +1090,21 @@ test('edge cases from issue #957 (should fail)', () => {
   const target2 = createEvent<string>()
 
   sample({
+    //@ts-expect-error
     clock,
     // @ts-expect-error
     target: [target1, target2],
   })
 
   sample({
+    //@ts-expect-error
     clock,
     // @ts-expect-error
     target: [target2, target1],
   })
 
   sample({
+    //@ts-expect-error
     clock,
     // @ts-expect-error
     target: [target2],
@@ -983,9 +1112,12 @@ test('edge cases from issue #957 (should fail)', () => {
 
   expect(typecheck).toMatchInlineSnapshot(`
     "
-    Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
-    Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
-    Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+    Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+    Type 'EventCallable<string>' is not assignable to type 'UnitTargetable<number>'.
+    Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+    Type 'EventCallable<string>' is not assignable to type 'UnitTargetable<number>'.
+    Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+    Type 'EventCallable<string>' is not assignable to type 'UnitTargetable<number>'.
     "
   `)
 })
@@ -1004,7 +1136,10 @@ describe('cross mismatch', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'target' does not exist in type '{ clock: readonly [Unit<string | number>, Unit<string | number>]; error: \\"clock should extend target type\\"; }'.
+      Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+      Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+      Type 'EventCallable<string>' is not assignable to type 'UnitTargetable<number>'.
+      Type 'EventCallable<number>' is not assignable to type 'UnitTargetable<string>'.
       "
     `)
   })

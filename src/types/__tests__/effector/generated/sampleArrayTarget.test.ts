@@ -292,29 +292,47 @@ const typecheck = '{global}'
           Types of property '__' are incompatible.
             Type 'string | number' is not assignable to type 'string'.
               Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string>' is not assignable to type 'UnitTargetable<number>'.
+          Types of property '__' are incompatible.
+            Type 'string' is not assignable to type 'number'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string | boolean>'.
+          Types of property '__' are incompatible.
+            Type 'number' is not assignable to type 'string | boolean'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'UnitTargetable<number>'.
+          Types of property '__' are incompatible.
+            Type 'string | boolean' is not assignable to type 'number'.
+              Type 'string' is not assignable to type 'number'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string>' is not assignable to type 'UnitTargetable<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string | boolean>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'UnitTargetable<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string | boolean>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'UnitTargetable<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string>' is not assignable to type 'UnitTargetable<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string>' is not assignable to type 'UnitTargetable<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<string>' is not assignable to type 'UnitTargetable<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string | boolean>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'UnitTargetable<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<string | boolean>'.
+        Type 'EventCallable<string | boolean>' is not assignable to type 'UnitTargetable<number>'.
         Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
-        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'UnitTargetable<string>'.
+          Types of property '__' are incompatible.
+            Type 'number' is not assignable to type 'string'.
         Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
-        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
-        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
-        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'UnitTargetable<string>'.
         Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
-        Type 'EventCallable<void>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'UnitTargetable<string>'.
         Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
-        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'UnitTargetable<string>'.
         Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
-        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
-        Type 'EventCallable<string | number>' is not assignable to type 'Unit<number>'.
-        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
-        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
-        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
-        Type 'EventCallable<void>' is not assignable to type 'Unit<string>'.
-        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
-        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
-        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
-        Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<string>'.
-        Type 'EventCallable<number>' is not assignable to type 'Unit<string>'.
-        Type 'EventCallable<string | number>' is not assignable to type 'Unit<string>'.
+        Type 'EventCallable<number>' is not assignable to type 'UnitTargetable<string>'.
+        Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'UnitTargetable<string>'.
         Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
         Type 'EventCallable<string | boolean>' is not assignable to type 'Unit<number>'.
         Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
