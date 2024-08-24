@@ -624,7 +624,6 @@ describe('clock without source', () => {
       clock: foo,
       //@ts-expect-error
       fn: foo => foo,
-      //@ts-expect-error
       target,
     })
     expect(typecheck).toMatchInlineSnapshot(`
@@ -644,7 +643,6 @@ describe('clock without source', () => {
       clock: [foo, bar],
       //@ts-expect-error
       fn: foo => true,
-      //@ts-expect-error
       target,
     })
 
@@ -663,7 +661,6 @@ describe('clock without source', () => {
     sample({
       //@ts-expect-error
       clock: foo,
-      //@ts-expect-error
       target,
     })
 
@@ -683,7 +680,6 @@ describe('clock without source', () => {
     sample({
       //@ts-expect-error
       clock: [foo, bar, baz],
-      //@ts-expect-error
       target,
     })
 
@@ -961,255 +957,6 @@ describe('mix of wider and narrower types', () => {
   })
 })
 
-describe('mix of wider and narrower types', () => {
-  /** exact type match is hard, so we accept wider types here */
-  test('source exact, target exact and narrower (should pass)', () => {
-    const exact = createEvent<{a: string; b: string}>()
-    const narrower = createEvent<{a: string}>()
-
-    sample({
-      source: exact,
-      target: [exact, narrower],
-    })
-
-    expect(typecheck).toMatchInlineSnapshot(`
-      "
-      no errors
-      "
-    `)
-  })
-  test('clock exact and narrower, target exact and narrower (should fail)', () => {
-    const exact = createEvent<{a: string; b: string}>()
-    const narrower = createEvent<{a: string}>()
-
-    sample({
-      //@ts-expect-error
-      clock: [exact, narrower],
-      target: [exact, narrower],
-    })
-
-    expect(typecheck).toMatchInlineSnapshot(`
-      "
-      no errors
-      "
-    `)
-  })
-  /** exact type match is hard, so we accept wider types here */
-  test('clock exact, target exact and narrower (should pass)', () => {
-    const exact = createEvent<{a: string; b: string}>()
-    const narrower = createEvent<{a: string}>()
-
-    sample({
-      clock: [exact],
-      target: [exact, narrower],
-    })
-    sample({
-      clock: exact,
-      target: [exact, narrower],
-    })
-
-    expect(typecheck).toMatchInlineSnapshot(`
-      "
-      no errors
-      "
-    `)
-  })
-  test('clock exact nullable, target exact and narrower (should fail)', () => {
-    const clock = createEvent<{a: string; b: string} | null>()
-    const exact = createEvent<{a: string; b: string}>()
-    const narrower = createEvent<{a: string}>()
-
-    sample({
-      //@ts-expect-error
-      clock: [clock],
-      //@ts-expect-error
-      target: [exact, narrower],
-    })
-    sample({
-      //@ts-expect-error
-      clock,
-      //@ts-expect-error
-      target: [exact, narrower],
-    })
-    sample({
-      //@ts-expect-error
-      clock,
-      target: [exact],
-    })
-
-    expect(typecheck).toMatchInlineSnapshot(`
-      "
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | null; targetType: { a: string; }; }[]; }'.
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | null; targetType: { a: string; }; }[]; }'.
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | null; targetType: { a: string; b: string; }; }[]; }'.
-      "
-    `)
-  })
-  /** exact type match is hard, so we accept wider types here */
-  test('clock exact nullable, target exact and narrower, filter Boolean (should pass)', () => {
-    const clock = createEvent<{a: string; b: string} | null>()
-    const exact = createEvent<{a: string; b: string}>()
-    const narrower = createEvent<{a: string}>()
-
-    sample({
-      clock: [clock],
-      filter: Boolean,
-      target: [exact, narrower],
-    })
-    sample({
-      clock,
-      filter: Boolean,
-      target: [exact, narrower],
-    })
-    sample({
-      clock,
-      filter: Boolean,
-      target: [exact],
-    })
-
-    expect(typecheck).toMatchInlineSnapshot(`
-      "
-      no errors
-      "
-    `)
-  })
-  test('clock exact and narrower nullable, target exact and narrower, filter Boolean (should fail)', () => {
-    const clockExact = createEvent<{a: string; b: string} | null>()
-    const clockNarrower = createEvent<{a: string} | null>()
-    const exact = createEvent<{a: string; b: string}>()
-    const narrower = createEvent<{a: string}>()
-
-    sample({
-      clock: [
-        clockExact,
-        //@ts-expect-error
-        clockNarrower,
-      ],
-      filter: Boolean,
-      target: [exact, narrower],
-    })
-    sample({
-      clock: [clockExact, clockNarrower],
-      filter: Boolean,
-      target: [narrower],
-    })
-    sample({
-      clock: [
-        clockExact,
-        //@ts-expect-error
-        clockNarrower,
-      ],
-      filter: Boolean,
-      target: [exact],
-    })
-
-    expect(typecheck).toMatchInlineSnapshot(`
-      "
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }[]; }'.
-      "
-    `)
-  })
-  test('clock exact and narrower, target exact (should fail)', () => {
-    const exact = createEvent<{a: string; b: string}>()
-    const narrower = createEvent<{a: string}>()
-
-    sample({
-      //@ts-expect-error
-      clock: [exact, narrower],
-      target: [exact],
-    })
-    sample({
-      //@ts-expect-error
-      clock: [exact, narrower],
-      target: exact,
-    })
-
-    expect(typecheck).toMatchInlineSnapshot(`
-      "
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }[]; }'.
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }; }'.
-      "
-    `)
-  })
-  // clock types are failing when target is narrower so probably source should behave in that way too
-  test('source exact, target union with narrower and exact (should pass)', () => {
-    const exact = createEvent<{a: string; b: string}>()
-    const narrower = createEvent<{a: string}>()
-    const narrowerUnion = createEvent<{a: number} | {a: string; b: string}>()
-
-    sample({clock: exact, target: narrower})
-    sample({clock: exact, target: [narrower]})
-    sample({clock: exact, target: narrowerUnion})
-    sample({clock: exact, target: [narrowerUnion]})
-    sample({clock: exact, target: [narrowerUnion, narrower]})
-
-    expect(typecheck).toMatchInlineSnapshot(`
-      "
-      no errors
-      "
-    `)
-  })
-  test('should not mark correct case near incorrect with source (should pass)', () => {
-    const source = createEvent<{a: string; b: string}>()
-    const incorrect = createEvent<{a: number}>()
-    const correct = createEvent<{a: string; b: string} | {a: number}>()
-
-    sample({
-      source,
-      target: [correct],
-    })
-
-    sample({
-      source,
-      target: [
-        correct,
-        //@ts-expect-error
-        incorrect,
-      ],
-    })
-    expect(typecheck).toMatchInlineSnapshot(`
-      "
-      no errors
-      "
-    `)
-  })
-  test('should not mark correct case near incorrect with clock (should fail)', () => {
-    const clock = createEvent<{a: string; b: string}>()
-    const incorrect = createEvent<{a: number}>()
-    const correct = createEvent<{a: string; b: string} | {a: number}>()
-
-    // this should pass
-    sample({
-      clock,
-      target: [correct],
-    })
-
-    sample({
-      //@ts-expect-error
-      clock,
-      target: [
-        correct,
-        //@ts-expect-error
-        incorrect,
-      ],
-    })
-    sample({
-      //@ts-expect-error
-      clock: [clock],
-      target: [
-        correct,
-        //@ts-expect-error
-        incorrect,
-      ],
-    })
-    expect(typecheck).toMatchInlineSnapshot(`
-      "
-      no errors
-      "
-    `)
-  })
-})
-
 test('edge cases from issue #957 (should fail)', () => {
   const clock = createEvent<number>()
 
@@ -1217,21 +964,18 @@ test('edge cases from issue #957 (should fail)', () => {
   const target2 = createEvent<string>()
 
   sample({
-    //@ts-expect-error
     clock,
     // @ts-expect-error
     target: [target1, target2],
   })
 
   sample({
-    //@ts-expect-error
     clock,
     // @ts-expect-error
     target: [target2, target1],
   })
 
   sample({
-    //@ts-expect-error
     clock,
     // @ts-expect-error
     target: [target2],
@@ -1239,7 +983,9 @@ test('edge cases from issue #957 (should fail)', () => {
 
   expect(typecheck).toMatchInlineSnapshot(`
     "
-    Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: number; targetType: string; }[]; }'.
+    Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+    Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
+    Type 'EventCallable<string>' is not assignable to type 'Unit<number>'.
     "
   `)
 })
@@ -1258,7 +1004,7 @@ describe('cross mismatch', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      no errors
+      Object literal may only specify known properties, and 'target' does not exist in type '{ clock: readonly [Unit<string | number>, Unit<string | number>]; error: \\"clock should extend target type\\"; }'.
       "
     `)
   })
