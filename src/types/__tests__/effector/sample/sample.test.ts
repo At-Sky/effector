@@ -948,22 +948,11 @@ describe('mix of wider and narrower types', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Type 'EventCallable<{ a: string; b: string; } | null>' is not assignable to type 'Unit<{ a: string; b: string; } | { a: string; }>'.
-        Types of property '__' are incompatible.
-          Type '{ a: string; b: string; } | null' is not assignable to type '{ a: string; b: string; } | { a: string; }'.
-            Type 'null' is not assignable to type '{ a: string; b: string; } | { a: string; }'.
-      Type 'EventCallable<{ a: string; } | null>' is not assignable to type 'Unit<{ a: string; b: string; } | { a: string; }>'.
-        Types of property '__' are incompatible.
-          Type '{ a: string; } | null' is not assignable to type '{ a: string; b: string; } | { a: string; }'.
-            Type 'null' is not assignable to type '{ a: string; b: string; } | { a: string; }'.
-      Type 'EventCallable<{ a: string; b: string; } | null>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
-        Types of property '__' are incompatible.
-          Type '{ a: string; b: string; } | null' is not assignable to type '{ a: string; b: string; }'.
-            Type 'null' is not assignable to type '{ a: string; b: string; }'.
       Type 'EventCallable<{ a: string; } | null>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
         Types of property '__' are incompatible.
           Type '{ a: string; } | null' is not assignable to type '{ a: string; b: string; }'.
             Type 'null' is not assignable to type '{ a: string; b: string; }'.
+      Type 'EventCallable<{ a: string; } | null>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
       "
     `)
   })

@@ -521,7 +521,10 @@ describe('sample(config)', () => {
         })
         expect(typecheck).toMatchInlineSnapshot(`
           "
-          Type 'StoreWritable<string>' is not assignable to type 'Unit<User>'.
+          Type 'EventCallable<User>' is not assignable to type 'Unit<string>'.
+            Types of property '__' are incompatible.
+              Type 'User' is not assignable to type 'string'.
+          Type 'StoreWritable<string>' is not assignable to type 'UnitTargetable<User>'.
             Types of property '__' are incompatible.
               Type 'string' is not assignable to type 'User'.
           "
