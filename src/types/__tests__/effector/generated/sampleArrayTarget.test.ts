@@ -1236,8 +1236,6 @@ const typecheck = '{global}'
         //@ts-expect-error
         sample({source:{a:$num,b:$str}     , target:[abn,ab]             })
         //@ts-expect-error
-        sample({source:{a:$num,b:$str}     , target:[ab,a_str]           })
-        //@ts-expect-error
         sample({source:[$num,$str]         , target:[l_str]              })
         //@ts-expect-error
         sample({source:[$num,$str]         , target:[l_num_num]          })
@@ -1251,8 +1249,6 @@ const typecheck = '{global}'
         sample({source:[$num,$str]         , target:[l_num_str,l_str]    })
         //@ts-expect-error
         sample({source:[$num,$str]         , target:[l_num_str,l_num_num]})
-        //@ts-expect-error
-        sample({source:[$num,$str]         , target:[l_num_num,l_str]    })
         //@ts-expect-error
         sample({source:[$num,$str] as const, target:[l_str]              })
         //@ts-expect-error
@@ -1268,8 +1264,6 @@ const typecheck = '{global}'
         //@ts-expect-error
         sample({source:[$num,$str] as const, target:[l_num_str,l_num_num]})
         //@ts-expect-error
-        sample({source:[$num,$str] as const, target:[l_num_num,l_str]    })
-        //@ts-expect-error
         sample({source:{a:$num,b:$str}     , clock:num, target:[a_str]              })
         //@ts-expect-error
         sample({source:{a:$num,b:$str}     , clock:num, target:[abn]                })
@@ -1283,8 +1277,6 @@ const typecheck = '{global}'
         sample({source:{a:$num,b:$str}     , clock:num, target:[abn,a_str]          })
         //@ts-expect-error
         sample({source:{a:$num,b:$str}     , clock:num, target:[abn,ab]             })
-        //@ts-expect-error
-        sample({source:{a:$num,b:$str}     , clock:num, target:[ab,a_str]           })
         //@ts-expect-error
         sample({source:[$num,$str]         , clock:num, target:[l_str]              })
         //@ts-expect-error
@@ -1300,8 +1292,6 @@ const typecheck = '{global}'
         //@ts-expect-error
         sample({source:[$num,$str]         , clock:num, target:[l_num_str,l_num_num]})
         //@ts-expect-error
-        sample({source:[$num,$str]         , clock:num, target:[l_num_num,l_str]    })
-        //@ts-expect-error
         sample({source:[$num,$str] as const, clock:num, target:[l_str]              })
         //@ts-expect-error
         sample({source:[$num,$str] as const, clock:num, target:[l_num_num]          })
@@ -1315,8 +1305,6 @@ const typecheck = '{global}'
         sample({source:[$num,$str] as const, clock:num, target:[l_num_str,l_str]    })
         //@ts-expect-error
         sample({source:[$num,$str] as const, clock:num, target:[l_num_str,l_num_num]})
-        //@ts-expect-error
-        sample({source:[$num,$str] as const, clock:num, target:[l_num_num,l_str]    })
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
@@ -1350,9 +1338,6 @@ const typecheck = '{global}'
         Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ readonly a: number; readonly b: string; }>'.
           The types of '__.b' are incompatible between these types.
             Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ readonly a: number; readonly b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ readonly a: number; readonly b: string; }'.
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number, string]>'.
           Types of property '__' are incompatible.
             Type '[string]' is not assignable to type 'readonly [number, string]'.
@@ -1369,8 +1354,6 @@ const typecheck = '{global}'
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
-        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
-        Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[number]>' is not assignable to type 'Unit<readonly [number, string]>'.
@@ -1381,8 +1364,6 @@ const typecheck = '{global}'
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
-        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
-        Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<AS>' is not assignable to type 'Unit<{ readonly a: number; readonly b: string; }>'.
           Types of property '__' are incompatible.
             Property 'b' is missing in type 'AS' but required in type '{ readonly a: number; readonly b: string; }'.
@@ -1413,9 +1394,6 @@ const typecheck = '{global}'
         Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ readonly a: number; readonly b: string; }>'.
           The types of '__.b' are incompatible between these types.
             Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ readonly a: number; readonly b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ readonly a: number; readonly b: string; }'.
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[number]>' is not assignable to type 'Unit<readonly [number, string]>'.
@@ -1426,8 +1404,6 @@ const typecheck = '{global}'
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
-        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
-        Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[number]>' is not assignable to type 'Unit<readonly [number, string]>'.
@@ -1438,8 +1414,6 @@ const typecheck = '{global}'
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
-        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
-        Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number, string]>'.
         "
       `)
     })
@@ -1491,8 +1465,6 @@ const typecheck = '{global}'
         //@ts-expect-error
         sample({source:{a:$num,b:$str}     , target:[abn,ab]     , fn:({a,b}) => ({a,b})})
         //@ts-expect-error
-        sample({source:{a:$num,b:$str}     , target:[ab,a_str]   , fn:({a,b}) => ({a,b})})
-        //@ts-expect-error
         sample({source:[$num,$str]         , target:[a_str]      , fn:([a,b]) => ({a,b})})
         //@ts-expect-error
         sample({source:[$num,$str]         , target:[abn]        , fn:([a,b]) => ({a,b})})
@@ -1506,8 +1478,6 @@ const typecheck = '{global}'
         sample({source:[$num,$str]         , target:[abn,a_str]  , fn:([a,b]) => ({a,b})})
         //@ts-expect-error
         sample({source:[$num,$str]         , target:[abn,ab]     , fn:([a,b]) => ({a,b})})
-        //@ts-expect-error
-        sample({source:[$num,$str]         , target:[ab,a_str]   , fn:([a,b]) => ({a,b})})
         //@ts-expect-error
         sample({source:[$num,$str] as const, target:[a_str]      , fn:([a,b]) => ({a,b})})
         //@ts-expect-error
@@ -1523,8 +1493,6 @@ const typecheck = '{global}'
         //@ts-expect-error
         sample({source:[$num,$str] as const, target:[abn,ab]     , fn:([a,b]) => ({a,b})})
         //@ts-expect-error
-        sample({source:[$num,$str] as const, target:[ab,a_str]   , fn:([a,b]) => ({a,b})})
-        //@ts-expect-error
         sample({source:{a:$num,b:$str}     , clock:num, target:[a_str]      , fn:({a,b}) => ({a,b})})
         //@ts-expect-error
         sample({source:{a:$num,b:$str}     , clock:num, target:[abn]        , fn:({a,b}) => ({a,b})})
@@ -1538,8 +1506,6 @@ const typecheck = '{global}'
         sample({source:{a:$num,b:$str}     , clock:num, target:[abn,a_str]  , fn:({a,b}) => ({a,b})})
         //@ts-expect-error
         sample({source:{a:$num,b:$str}     , clock:num, target:[abn,ab]     , fn:({a,b}) => ({a,b})})
-        //@ts-expect-error
-        sample({source:{a:$num,b:$str}     , clock:num, target:[ab,a_str]   , fn:({a,b}) => ({a,b})})
         //@ts-expect-error
         sample({source:[$num,$str]         , clock:num, target:[a_str]      , fn:([a,b]) => ({a,b})})
         //@ts-expect-error
@@ -1555,8 +1521,6 @@ const typecheck = '{global}'
         //@ts-expect-error
         sample({source:[$num,$str]         , clock:num, target:[abn,ab]     , fn:([a,b]) => ({a,b})})
         //@ts-expect-error
-        sample({source:[$num,$str]         , clock:num, target:[ab,a_str]   , fn:([a,b]) => ({a,b})})
-        //@ts-expect-error
         sample({source:[$num,$str] as const, clock:num, target:[a_str]      , fn:([a,b]) => ({a,b})})
         //@ts-expect-error
         sample({source:[$num,$str] as const, clock:num, target:[abn]        , fn:([a,b]) => ({a,b})})
@@ -1570,8 +1534,6 @@ const typecheck = '{global}'
         sample({source:[$num,$str] as const, clock:num, target:[abn,a_str]  , fn:([a,b]) => ({a,b})})
         //@ts-expect-error
         sample({source:[$num,$str] as const, clock:num, target:[abn,ab]     , fn:([a,b]) => ({a,b})})
-        //@ts-expect-error
-        sample({source:[$num,$str] as const, clock:num, target:[ab,a_str]   , fn:([a,b]) => ({a,b})})
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
@@ -1608,6 +1570,33 @@ const typecheck = '{global}'
         Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           Types of property '__' are incompatible.
             Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
         Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           Types of property '__' are incompatible.
             Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
@@ -1641,6 +1630,33 @@ const typecheck = '{global}'
         Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           Types of property '__' are incompatible.
             Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
         Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           Types of property '__' are incompatible.
             Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
@@ -1674,9 +1690,6 @@ const typecheck = '{global}'
         Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           Types of property '__' are incompatible.
             Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
         Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           The types of '__.b' are incompatible between these types.
             Type 'number' is not assignable to type 'string'.
@@ -1704,75 +1717,6 @@ const typecheck = '{global}'
         Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           The types of '__.b' are incompatible between these types.
             Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
         "
       `)
     })
@@ -1816,8 +1760,6 @@ const typecheck = '{global}'
         //@ts-expect-error
         sample({source:{a:$num}       , target:[abn,ab]             })
         //@ts-expect-error
-        sample({source:{a:$num}       , target:[ab,a_str]           })
-        //@ts-expect-error
         sample({source:[$num]         , target:[l_str]              })
         //@ts-expect-error
         sample({source:[$num]         , target:[l_num_str]          })
@@ -1835,8 +1777,6 @@ const typecheck = '{global}'
         sample({source:[$num]         , target:[l_num_str,l_str]    })
         //@ts-expect-error
         sample({source:[$num]         , target:[l_num_str,l_num_num]})
-        //@ts-expect-error
-        sample({source:[$num]         , target:[l_num_num,l_str]    })
         //@ts-expect-error
         sample({source:[$num] as const, target:[l_str]              })
         //@ts-expect-error
@@ -1856,8 +1796,6 @@ const typecheck = '{global}'
         //@ts-expect-error
         sample({source:[$num] as const, target:[l_num_str,l_num_num]})
         //@ts-expect-error
-        sample({source:[$num] as const, target:[l_num_num,l_str]    })
-        //@ts-expect-error
         sample({source:{a:$num}       , clock:num, target:[a_str]              })
         //@ts-expect-error
         sample({source:{a:$num}       , clock:num, target:[abn]                })
@@ -1875,8 +1813,6 @@ const typecheck = '{global}'
         sample({source:{a:$num}       , clock:num, target:[abn,a_str]          })
         //@ts-expect-error
         sample({source:{a:$num}       , clock:num, target:[abn,ab]             })
-        //@ts-expect-error
-        sample({source:{a:$num}       , clock:num, target:[ab,a_str]           })
         //@ts-expect-error
         sample({source:[$num]         , clock:num, target:[l_str]              })
         //@ts-expect-error
@@ -1896,8 +1832,6 @@ const typecheck = '{global}'
         //@ts-expect-error
         sample({source:[$num]         , clock:num, target:[l_num_str,l_num_num]})
         //@ts-expect-error
-        sample({source:[$num]         , clock:num, target:[l_num_num,l_str]    })
-        //@ts-expect-error
         sample({source:[$num] as const, clock:num, target:[l_str]              })
         //@ts-expect-error
         sample({source:[$num] as const, clock:num, target:[l_num_str]          })
@@ -1915,8 +1849,6 @@ const typecheck = '{global}'
         sample({source:[$num] as const, clock:num, target:[l_num_str,l_str]    })
         //@ts-expect-error
         sample({source:[$num] as const, clock:num, target:[l_num_str,l_num_num]})
-        //@ts-expect-error
-        sample({source:[$num] as const, clock:num, target:[l_num_num,l_str]    })
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
@@ -1938,9 +1870,6 @@ const typecheck = '{global}'
             Type 'string' is not assignable to type 'number'.
         Type '{ a: StoreWritable<number>; }' is not assignable to type '{ a: StoreWritable<number>; b: Store<string>; } | { a: StoreWritable<number>; b: Store<number>; }'.
           Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: StoreWritable<number>; b: Store<number>; }'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ readonly a: number; }>'.
-          The types of '__.a' are incompatible between these types.
-            Type 'string' is not assignable to type 'number'.
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
           Types of property '__' are incompatible.
             Type '[string]' is not assignable to type 'readonly [number]'.
@@ -1962,8 +1891,6 @@ const typecheck = '{global}'
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
-        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
-        Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
@@ -1976,8 +1903,6 @@ const typecheck = '{global}'
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
-        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
-        Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<AS>' is not assignable to type 'Unit<{ readonly a: number; }>'.
           The types of '__.a' are incompatible between these types.
             Type 'string' is not assignable to type 'number'.
@@ -1996,9 +1921,6 @@ const typecheck = '{global}'
             Type 'string' is not assignable to type 'number'.
         Type '{ a: StoreWritable<number>; }' is not assignable to type '{ a: StoreWritable<number>; b: Store<string>; } | { a: StoreWritable<number>; b: Store<number>; }'.
           Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: StoreWritable<number>; b: Store<number>; }'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ readonly a: number; }>'.
-          The types of '__.a' are incompatible between these types.
-            Type 'string' is not assignable to type 'number'.
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
@@ -2011,8 +1933,6 @@ const typecheck = '{global}'
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
-        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
-        Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
@@ -2025,8 +1945,6 @@ const typecheck = '{global}'
         Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, string]>' is not assignable to type 'Unit<readonly [number]>'.
         Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
-        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
-        Type 'EventCallable<[string]>' is not assignable to type 'Unit<readonly [number]>'.
         "
       `)
     })
@@ -2078,8 +1996,6 @@ const typecheck = '{global}'
         //@ts-expect-error
         sample({source:{a:$num}       , target:[abn,ab]     , fn:({a}) => ({a,b:''})})
         //@ts-expect-error
-        sample({source:{a:$num}       , target:[ab,a_str]   , fn:({a}) => ({a,b:''})})
-        //@ts-expect-error
         sample({source:[$num]         , target:[a_str]      , fn:([a]) => ({a,b:''})})
         //@ts-expect-error
         sample({source:[$num]         , target:[abn]        , fn:([a]) => ({a,b:''})})
@@ -2093,8 +2009,6 @@ const typecheck = '{global}'
         sample({source:[$num]         , target:[abn,a_str]  , fn:([a]) => ({a,b:''})})
         //@ts-expect-error
         sample({source:[$num]         , target:[abn,ab]     , fn:([a]) => ({a,b:''})})
-        //@ts-expect-error
-        sample({source:[$num]         , target:[ab,a_str]   , fn:([a]) => ({a,b:''})})
         //@ts-expect-error
         sample({source:[$num] as const, target:[a_str]      , fn:([a]) => ({a,b:''})})
         //@ts-expect-error
@@ -2110,8 +2024,6 @@ const typecheck = '{global}'
         //@ts-expect-error
         sample({source:[$num] as const, target:[abn,ab]     , fn:([a]) => ({a,b:''})})
         //@ts-expect-error
-        sample({source:[$num] as const, target:[ab,a_str]   , fn:([a]) => ({a,b:''})})
-        //@ts-expect-error
         sample({source:{a:$num}       , clock:num, target:[a_str]      , fn:({a}) => ({a,b:''})})
         //@ts-expect-error
         sample({source:{a:$num}       , clock:num, target:[abn]        , fn:({a}) => ({a,b:''})})
@@ -2125,8 +2037,6 @@ const typecheck = '{global}'
         sample({source:{a:$num}       , clock:num, target:[abn,a_str]  , fn:({a}) => ({a,b:''})})
         //@ts-expect-error
         sample({source:{a:$num}       , clock:num, target:[abn,ab]     , fn:({a}) => ({a,b:''})})
-        //@ts-expect-error
-        sample({source:{a:$num}       , clock:num, target:[ab,a_str]   , fn:({a}) => ({a,b:''})})
         //@ts-expect-error
         sample({source:[$num]         , clock:num, target:[a_str]      , fn:([a]) => ({a,b:''})})
         //@ts-expect-error
@@ -2142,8 +2052,6 @@ const typecheck = '{global}'
         //@ts-expect-error
         sample({source:[$num]         , clock:num, target:[abn,ab]     , fn:([a]) => ({a,b:''})})
         //@ts-expect-error
-        sample({source:[$num]         , clock:num, target:[ab,a_str]   , fn:([a]) => ({a,b:''})})
-        //@ts-expect-error
         sample({source:[$num] as const, clock:num, target:[a_str]      , fn:([a]) => ({a,b:''})})
         //@ts-expect-error
         sample({source:[$num] as const, clock:num, target:[abn]        , fn:([a]) => ({a,b:''})})
@@ -2157,8 +2065,6 @@ const typecheck = '{global}'
         sample({source:[$num] as const, clock:num, target:[abn,a_str]  , fn:([a]) => ({a,b:''})})
         //@ts-expect-error
         sample({source:[$num] as const, clock:num, target:[abn,ab]     , fn:([a]) => ({a,b:''})})
-        //@ts-expect-error
-        sample({source:[$num] as const, clock:num, target:[ab,a_str]   , fn:([a]) => ({a,b:''})})
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
@@ -2195,6 +2101,33 @@ const typecheck = '{global}'
         Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           Types of property '__' are incompatible.
             Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
         Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           Types of property '__' are incompatible.
             Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
@@ -2228,6 +2161,33 @@ const typecheck = '{global}'
         Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           Types of property '__' are incompatible.
             Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
         Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           Types of property '__' are incompatible.
             Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
@@ -2261,9 +2221,6 @@ const typecheck = '{global}'
         Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           Types of property '__' are incompatible.
             Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
         Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           The types of '__.b' are incompatible between these types.
             Type 'number' is not assignable to type 'string'.
@@ -2291,75 +2248,6 @@ const typecheck = '{global}'
         Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
           The types of '__.b' are incompatible between these types.
             Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<AN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AN' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
-        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          The types of '__.b' are incompatible between these types.
-            Type 'number' is not assignable to type 'string'.
-        Type 'EventCallable<AS>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
-          Types of property '__' are incompatible.
-            Property 'b' is missing in type 'AS' but required in type '{ a: number; b: string; }'.
         "
       `)
     })
